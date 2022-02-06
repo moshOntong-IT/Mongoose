@@ -4,6 +4,10 @@ export const fruitSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, "Required to insert fruit name"],
+        validate: {
+            validator: (x) => x.charAt(0) === x.charAt(0).toUpperCase(),
+            message: (props) => "The first letter must be capital letter",
+        },
     },
     rating: {
         type: Number,
