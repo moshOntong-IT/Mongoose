@@ -1,8 +1,15 @@
 import mongoose from "mongoose";
 
 const fruitSchema = new mongoose.Schema({
-    name: String,
-    rating: Number,
+    name: {
+        type: String,
+        required: [true, "Required to insert fruit name"],
+    },
+    rating: {
+        type: Number,
+        min: [1, "Please you have to insert alteast 1"],
+        max: [10, "So much fruits"],
+    },
     review: String,
 });
 

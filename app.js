@@ -22,42 +22,12 @@ const fruit1 = new Fruit({
     rating: 10,
     review: "Snow white apple",
 });
-const orange = new Fruit({
-    name: "Orange",
-    rating: 6,
-    review: "Ang pait naman nito",
-});
-const durian = new Fruit({
-    name: "durain",
-    rating: 10,
-    review: "The best fruits ever",
-});
+fruit1.save();
 
-Fruit.insertMany([fruit1, orange, durian], (err, docs) => {
-    if (err) {
-        console.log(err);
-    } else {
-        console.log("Successfully saved all fruits");
-        console.log(docs);
-    }
-});
+// //creating Person document
+// const person1 = new Person({
+//     name: "Mosh",
+//     age: 20,
+// });
 
-Fruit.find((err, fruits) => {
-    if (err) {
-        console.log(err);
-    } else {
-        mongoose.connection.close();
-        fruits.forEach((fruit) => {
-            console.log(fruit.name);
-        });
-        // console.log(fruits);
-    }
-});
-
-//creating Person document
-const person1 = new Person({
-    name: "Mosh",
-    age: 20,
-});
-
-person1.save();
+// person1.save();
