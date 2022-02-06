@@ -17,12 +17,12 @@ async function main() {
 }
 
 //creating Fruit document
-const fruit1 = new Fruit({
-    name: "Apple",
-    rating: 10,
-    review: "Snow white apple",
-});
-fruit1.save();
+// const fruit1 = new Fruit({
+//     name: "Apple",
+//     rating: 10,
+//     review: "Snow white apple",
+// });
+// fruit1.save();
 
 // //creating Person document
 // const person1 = new Person({
@@ -31,3 +31,26 @@ fruit1.save();
 // });
 
 // person1.save();
+
+//* Delete Function
+
+Fruit.deleteOne({ _id: "61ff8c17a58a627d19c41ad7" }, (err, res) => {
+    mongoose.connection.close();
+
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(res);
+    }
+});
+//* Update Function
+// Fruit.updateOne({ _id: "61ff8c17a58a627d19c41ad9" }, { name: "Durian" },
+//     (err, res) => {
+//         mongoose.connection.close();
+//         if (err) {
+//             console.log(err);
+//         } else {
+//             console.log(res);
+//         }
+//     }
+// );
