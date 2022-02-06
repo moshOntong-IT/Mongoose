@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const fruitSchema = new mongoose.Schema({
+export const fruitSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, "Required to insert fruit name"],
