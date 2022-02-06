@@ -22,37 +22,37 @@ const fruit1 = new Fruit({
     rating: 10,
     review: "Snow white apple",
 });
-// const orange = new Fruit({
-//     name: "Orange",
-//     rating: 6,
-//     review: "Ang pait naman nito",
-// });
-// const durian = new Fruit({
-//     name: "durain",
-//     rating: 10,
-//     review: "The best fruits ever",
-// });
+const orange = new Fruit({
+    name: "Orange",
+    rating: 6,
+    review: "Ang pait naman nito",
+});
+const durian = new Fruit({
+    name: "durain",
+    rating: 10,
+    review: "The best fruits ever",
+});
 
-// // Fruit.insertMany([fruit1,orange, durian], (err, docs) => {
-// //     if (err) {
-// //         console.log(err);
-// //     } else {
-// //         console.log("Successfully saved all fruits");
-// //         console.log(docs);
-// //     }
-// // });
+Fruit.insertMany([fruit1, orange, durian], (err, docs) => {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log("Successfully saved all fruits");
+        console.log(docs);
+    }
+});
 
-// Fruit.find((err, fruits) => {
-//     if (err) {
-//         console.log(err);
-//     } else {
-//         mongoose.connection.close();
-//         fruits.forEach((fruit) => {
-//             console.log(fruit.name);
-//         });
-//         // console.log(fruits);
-//     }
-// });
+Fruit.find((err, fruits) => {
+    if (err) {
+        console.log(err);
+    } else {
+        mongoose.connection.close();
+        fruits.forEach((fruit) => {
+            console.log(fruit.name);
+        });
+        // console.log(fruits);
+    }
+});
 
 //creating Person document
 const person1 = new Person({
@@ -60,4 +60,4 @@ const person1 = new Person({
     age: 20,
 });
 
-// person1.save();
+person1.save();
